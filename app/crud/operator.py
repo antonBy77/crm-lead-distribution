@@ -41,12 +41,12 @@ class OperatorCRUD:
         ).first()
         
         if db_weight:
-            db_weight.weight = weight
+            db_weight.weight = float(weight)
         else:
             db_weight = OperatorSourceWeight(
                 operator_id=operator_id,
                 source_id=source_id,
-                weight=weight
+                weight=float(weight)
             )
             db.add(db_weight)
         
